@@ -25,12 +25,12 @@ public class EmployeeDataAccess {
 		return emp;
 	}
 	
-	public Iterable<Employee> getAllEmployee() {
+	public Iterable<Employee> getAllEmployees() {
 		return getEmployeeDAO().findAll();
 	}
 	
 	public Employee findByEmployeeNumber(int empNumber) {
-		return getEmployeeDAO().findById(empNumber).get();
+		return getEmployeeDAO().findById(empNumber).orElse(new Employee());
 	}
 	
 	public Employee removeEmployee(int empNumber) {
