@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 import com.ros.employees.entities.Employee;
 
 @Component
-@Path("/api/employees/")
+@Path("/employees")
 public class EmployeeAccessAPI {
 
 	EmployeeDataAccess employeeDataAccess;

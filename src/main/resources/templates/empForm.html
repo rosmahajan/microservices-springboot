@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Register Employee</h2>
+	<form method="post" action="register" th:object="${empForm}">
+		<table>
+			<tr>
+				<td>Number</td>
+				<td><input name="employeeNumber" th:value="*{employeeNumber}"></td>
+				<td><span th:if="${#fields.hasErrors('employeeNumber')}" th:errors="*{employeeNumber}"></span></td>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td><input name="name" th:value="*{name}"></td>
+				<td><span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span></td>
+			</tr>
+			<tr>
+				<td>Salary</td>
+				<td><input name="salary" th:value="*{salary}"></td>
+				<td><span th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></span></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Add"></td>
+				<td><input type="reset" value="Reset"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee List</title>
+</head>
+<body>
+	<h1>Employee Information</h1>
+
+	<table th:unless="${#lists.isEmpty(emps)} ">
+		<tr>
+			<th>Number</th>
+			<th>Name</th>
+			<th>Salary</th>
+			<th><a href="showForm">Add</a></th>
+
+		</tr>
+		<tr th:each="e:${emps}">
+			<td th:text="${{e.employeeNumber}}"></td>
+			<td th:text="${{e.name}}"></td>
+			<td th:text="${{e.salary}}"></td>
+		</tr>
+		
+	</table>
+</body>
+</html>
